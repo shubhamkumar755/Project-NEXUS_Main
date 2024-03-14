@@ -1,0 +1,30 @@
+<%layout("layouts/boilerplate")%>
+
+<div class="offset-1 ">
+    <div class="mt-4 mb-4">
+        <h1><b>Account History</b></h1>
+    </div>
+    <div><p>User&nbsp;:&nbsp;&nbsp;&nbsp;<%=obj1[0].username%></p></div>
+    <div><p>Email&nbsp;:&nbsp;&nbsp;&nbsp;<%=obj1[0].email%></p></div>
+    <div class="row">
+        <%let idx=-1%>
+    <%for(lost of losts){%>
+        <%idx=idx+1%>
+            <div class="col-sm-6 mb-3 mb-sm-0 ">
+              <div class="card mt-3  bg-dark-subtle ">
+                <div class="card-body mt-3 mb-3 ">
+                    <center>
+                  <h4 class="card-title mb-3"><b><%=lost.keywords%></b></h4>
+
+                  <p class="card-text "><%=lost.description%></p>
+                
+                  <a href="/result/<%=idx%>" class="btn btn-success mt-3 mb-3">See Findings</a>
+                </center>
+                </div>
+              </div>
+            </div>
+       
+        <%}%>
+    </div>
+    
+</div>

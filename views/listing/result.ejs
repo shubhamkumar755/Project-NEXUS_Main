@@ -1,0 +1,51 @@
+<%layout("layouts/boilerplate")%>
+
+<div>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <%let flag=false%>
+        <%let flag2=false%>
+        <%for(let item of found){%>
+                <%sum=0%>
+                <%flag=false%>
+                <%if(item.location==lost.location){%>
+                    <%sum=sum+25%> 
+                    
+                    <%if(item.keywords==lost.keywords){%>
+                        <%sum=sum+50%>
+
+                        <%let fd=item.lostDate.toString().split(" ").slice(2,3).join("");
+                        let ld=lost.lostDate.toString().split(" ").slice(2,3).join("")%>
+                        
+                        <%if(ld-'0'<=fd-'0' && (fd-'0')-(ld-'0')<=5){%>  
+                            
+                            <%if(item.lostDate.toString().split(" ").slice(1,2).join("")===lost.lostDate.toString().split(" ").slice(1,2).join("")){%>
+                                <%flag=true%>
+                                <%sum=sum+25%>
+                                
+                            <%}%>
+                        <%}%>
+                        
+                        <%if(sum>=50 && flag){%>
+                            <%flag2=true%>
+                            <a href="/result2/<%=item.id%>" class="listing-link">
+                                <div class="card col listing-card mb-5">
+                                    <img src="<%=item.image.url%>" class="card-img-top" style="height: 20rem;" alt="...">
+                                    <div class="card-body">
+                                    <p class="card-text">
+                                        <h3 class="card-title"><b>Item:</b><%=item.keywords%></h3>
+                                        <p class="card-text"><b>Location:</b><%=item.location%></p>
+                                        <p class="card-text"><b>Date:</b><%=item.lostDate.toString().split(" ").slice(0,4).join("-")%></p>
+                                        <p class="card-text"><b>Match Percentage is</b>:<%=sum%>%</p>
+                                    </p>
+                                    </div>
+                                </div>
+                            </a>
+                        <%}%>
+                    <%}%>
+                <%}%>
+            <%}%> 
+            <%if(flag2==false){%>
+                <div><h2>No match found!!!</h2></div>
+                    <%}%>
+    </div>
+</div>

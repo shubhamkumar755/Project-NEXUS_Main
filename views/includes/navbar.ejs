@@ -1,0 +1,73 @@
+<style>
+    .navbar{
+        padding: 0;
+        margin: 0;
+    }
+    .main-div{
+        background-color: black;
+        padding: 10px;
+        color: white;
+        
+    }
+    .search-btn{
+      background-color: black;
+      color: #fff;
+      border-radius: 25px;
+      padding: 0 1rem 0 1rem;
+    }
+    .search-btn:hover{
+      background-color: black;
+      color: #fff;
+    }
+    .search-inp{
+      border-radius: 25px;
+      padding: 0.5rem 3rem 0.5rem 3rem;
+      font-size: 1rem;
+    }
+    i,a{
+        color: white;
+    }
+    .title{
+        font-size: large;
+        font-weight: 700;
+        color: white;
+        padding: 0;
+    }
+    .nav-link{
+        color: white;
+    }
+  </style>
+
+
+<nav class="navbar navbar-expand-lg  border-bottom sticky-top">
+    <div class="container-fluid main-div">
+      <!-- <a class="navbar-brand" href="/"><i class="fa-solid fa-magnifying-glass"></i></a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ">
+                <a class="nav-link title rock-salt-regular" href="/">NEXUS</a>
+            </div>
+            
+            <div class="navbar-nav ms-auto">
+                
+            </div>
+            <div class="navbar-nav ms-auto">
+                <a href="/" class="nav-link">Home</a>
+                <%if(!currUser){%>
+                  <a class="nav-link" aria-current="page" href="/signup">Sign up</a>
+                  <a class="nav-link" href="/login">Log in</a>
+                <%}%>
+                <%if(currUser){%>
+                  <a class="nav-link" href="/logout">Log out</a>
+                <%}%>
+                <a class="nav-link" href="/account">Account</a>
+                
+                
+            </div>
+        </div>
+
+    </div>
+  </nav>
