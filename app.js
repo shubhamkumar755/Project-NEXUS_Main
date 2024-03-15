@@ -28,6 +28,7 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken=process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 const {vitMap,code}=require("./public/js/vitMap.js");
+const helper=require("./helper");
 
 async function main(){
     await mongoose.connect(Atlas_URL);
@@ -113,6 +114,7 @@ app.post("/found", isLoggedIn,upload.single('obj[image]'),async(req,res,next)=>{
         query: req.body.obj.location,
         limit: 1
       }).send();
+    console.log(req.body.obj.lostDate);
     let url=req.file.path;
     let filename=req.file.filename; 
     let user2=req.session.passport.user;
@@ -179,7 +181,7 @@ app.get("/result/:id",isLoggedIn,async(req,res)=>{
         lost=l[id];
     }
     let sum=0;
-    res.render("./listing/result.ejs",{found,lost,sum});
+    res.render("./listing/result.ejs",{found,lost,sum,helper:helper});
 })
 app.get("/result2/:id",isLoggedIn,async(req,res)=>{
     let {id}=req.params;
@@ -270,10 +272,10 @@ app.post("/skills_add",isLoggedIn,async(req,res)=>{
     let allSkills=await Skills.find({});
     res.render("./listing2/skills_search.ejs",{allSkills,obj1});
 })
-app.post("/skills_search",isLoggedIn,(req,res)=>{
+app.post("/skills_search",isLoggedIn,async(req,res)=>{
     let {category1,category2}=req.body;
-    console.log(category1);
-    res.redirect("/");
+    let obj1=await Skills.find({}); 
+    res.render("./listing2/skills_search_result",{obj1,category1,category2});
 })
 
 //express middleware which deals with errors
