@@ -35,13 +35,32 @@
                     <div class="mb-3 col-md-6">
                         <label for="keyword" class="form-label" >Skill Category-1</label>
                         <select name="obj[keywords][0]" id="keyword" required class="form-control" onchange="updateSubSkillsOptions()">
-                            <option disabled selected value> -- select an option -- </option>
-                            <option value="Technical">Technical</option>
-                            <option value="Music">Music</option>
-                            <option value="Sports">Sports</option>
-                            <option value="Gaming">Gaming</option>
-                            <option value="Art and Crafts">Art and Crafts</option>
-                            <option value="Language">Language</option>
+                          <option disabled selected value> -- select an option -- </option>
+                          <option value="Programming">Programming</option>
+                          <option value="IT and Networking">IT and Networking</option>
+                          <option value="Graphic Design">Graphic Design</option>
+                          <option value="Hardware">Hardware</option>
+                          <option value="Instrumental Performance">Instrumental Performance</option>
+                          <option value="Vocal Performance">Vocal Performance</option>
+                          <option value="Music Theory">Music Theory</option>
+                          <option value="Audio Engineering">Audio Engineering</option>
+                          <option value="Team Sports">Team Sports</option>
+                          <option value="Individual Sports">Individual Sports</option>
+                          <option value="Outdoor Activities">Outdoor Activities</option>
+                          <option value="Strategy Games">Strategy Games</option>
+                          <option value="First-Person Shooter (FPS)">First-Person Shooter (FPS)</option>
+                          <option value="Role-Playing Games (RPG)">Role-Playing Games (RPG)</option>
+                          <option value="Simulation Games">Simulation Games</option>
+                          <option value="Puzzle Games">Puzzle Games</option>
+                          <option value="Drawing and Sketching">Drawing and Sketching</option>
+                          <option value="Painting">Painting</option>
+                          <option value="Sculpting">Sculpting</option>
+                          <option value="Crafts">Crafts</option>
+                          <option value="Speaking">Speaking</option>
+                          <option value="Writing">Writing</option>
+                          <option value="Reading Comprehension">Reading Comprehension</option>
+                          <option value="Translation">Translation</option>
+                      
                         </select>
                         <div class="invalid-feedback">Please enter a short description</div>
                     </div>
@@ -60,12 +79,31 @@
                         <label for="keyword11" class="form-label" >Skill Category-2</label>
                         <select name="obj[keywords][1]" id="keyword11" required class="form-control" onchange="updateSubSkillsOptions2()">
                             <option disabled selected value> -- select an option -- </option>
-                            <option value="Technical">Technical</option>
-                            <option value="Music">Music</option>
-                            <option value="Sports">Sports</option>
-                            <option value="Gaming">Gaming</option>
-                            <option value="Art and Crafts">Art and Crafts</option>
-                            <option value="Language">Language</option>
+                            <option value="Programming">Programming</option>
+                            <option value="IT and Networking">IT and Networking</option>
+                            <option value="Graphic Design">Graphic Design</option>
+                            <option value="Hardware">Hardware</option>
+                            <option value="Instrumental Performance">Instrumental Performance</option>
+                            <option value="Vocal Performance">Vocal Performance</option>
+                            <option value="Music Theory">Music Theory</option>
+                            <option value="Audio Engineering">Audio Engineering</option>
+                            <option value="Team Sports">Team Sports</option>
+                            <option value="Individual Sports">Individual Sports</option>
+                            <option value="Outdoor Activities">Outdoor Activities</option>
+                            <option value="Strategy Games">Strategy Games</option>
+                            <option value="First-Person Shooter (FPS)">First-Person Shooter (FPS)</option>
+                            <option value="Role-Playing Games (RPG)">Role-Playing Games (RPG)</option>
+                            <option value="Simulation Games">Simulation Games</option>
+                            <option value="Puzzle Games">Puzzle Games</option>
+                            <option value="Drawing and Sketching">Drawing and Sketching</option>
+                            <option value="Painting">Painting</option>
+                            <option value="Sculpting">Sculpting</option>
+                            <option value="Crafts">Crafts</option>
+                            <option value="Speaking">Speaking</option>
+                            <option value="Writing">Writing</option>
+                            <option value="Reading Comprehension">Reading Comprehension</option>
+                            <option value="Translation">Translation</option>
+
                         </select>
                         <div class="invalid-feedback">Please enter a short description</div>
                     </div>
@@ -99,38 +137,122 @@ function updateSubSkillsOptions() {
   var selectedValue = mainSkill.value;
   
   // Add options to subSkill based on selectedValue
-  if (selectedValue === "Technical") {
-    subSkill.add(new Option("Programming", "Programming"));
-    subSkill.add(new Option("IT and Networking", "IT and Networking"));
-    subSkill.add(new Option("Graphic Design", "Graphic Design"));
-    subSkill.add(new Option("Hardware", "Hardware"));
-  } else if (selectedValue === "Music") {
-    subSkill.add(new Option("Instrumental Performance", "Instrumental Performance"));
-    subSkill.add(new Option("Vocal Performance", "Vocal Performance"));
-    subSkill.add(new Option("Music Theory", "Music Theory"));
-    subSkill.add(new Option("Audio Engineering", "Audio Engineering"));
-  } else if (selectedValue === "Sports") {
-    subSkill.add(new Option("Team Sports", "Team Sports"));
-    subSkill.add(new Option("Individual Sports", "Individual Sports"));
-    subSkill.add(new Option("Outdoor Activities", "Outdoor Activities"));
-  } else if (selectedValue === "Gaming") {
-    subSkill.add(new Option("Strategy Games", "Strategy Games"));
-    subSkill.add(new Option("First-Person Shooter (FPS)", "First-Person Shooter (FPS)"));
-    subSkill.add(new Option("Role-Playing Games (RPG)", "Role-Playing Games (RPG)"));
-    subSkill.add(new Option("Simulation Games", "Simulation Games"));
-    subSkill.add(new Option("Puzzle Games", "Puzzle Games"));
-  } else if (selectedValue === "Art and Crafts") {
-    subSkill.add(new Option("Drawing and Sketching", "Drawing and Sketching"));
-    subSkill.add(new Option("Painting", "Painting"));
-    subSkill.add(new Option("Sculpting", "Sculpting"));
-    subSkill.add(new Option("Crafts", "Crafts"));
-  } else if (selectedValue === "Language") {
-    subSkill.add(new Option("Speaking", "Speaking"));
-    subSkill.add(new Option("Writing", "Writing"));
-    subSkill.add(new Option("Reading Comprehension", "Reading Comprehension"));
-    subSkill.add(new Option("Translation", "Translation"));
-  }
-}
+  if (selectedValue === "Programming") {
+        subSkill.add(new Option("Web Development", "Web Development"));
+        subSkill.add(new Option("Mobile Development", "Mobile Development"));
+        subSkill.add(new Option("Software Engineering", "Software Engineering"));
+        subSkill.add(new Option("Data Science", "Data Science"));
+        subSkill.add(new Option("Algorithms and Data Structures", "Algorithms and Data Structures"));
+      } else if (selectedValue === "IT and Networking") {
+        subSkill.add(new Option("Network Administration", "Network Administration"));
+        subSkill.add(new Option("Cybersecurity", "Cybersecurity"));
+        subSkill.add(new Option("System Administration", "System Administration"));
+        subSkill.add(new Option("Cloud Computing", "Cloud Computing"));
+      } else if (selectedValue === "Graphic Design") {
+        subSkill.add(new Option("Illustration", "Illustration"));
+        subSkill.add(new Option("UI/UX Design", "UI/UX Design"));
+        subSkill.add(new Option("Motion Graphics", "Motion Graphics"));
+      } else if (selectedValue === "Hardware") {
+        subSkill.add(new Option("Electronics", "Electronics"));
+        subSkill.add(new Option("Robotics", "Robotics"));
+        subSkill.add(new Option("Circuit Design", "Circuit Design"));
+      } else if (selectedValue === "Instrumental Performance") {
+        subSkill.add(new Option("Guitar", "Guitar"));
+        subSkill.add(new Option("Piano", "Piano"));
+        subSkill.add(new Option("Violin", "Violin"));
+        subSkill.add(new Option("Drums", "Drums"));
+        subSkill.add(new Option("Flute", "Flute"));
+      } else if (selectedValue === "Vocal Performance") {
+        subSkill.add(new Option("Classical", "Classical"));
+        subSkill.add(new Option("Pop", "Pop"));
+        subSkill.add(new Option("Jazz", "Jazz"));
+        subSkill.add(new Option("Opera", "Opera"));
+      } else if (selectedValue === "Music Theory") {
+        subSkill.add(new Option("Harmony", "Harmony"));
+        subSkill.add(new Option("Composition", "Composition"));
+        subSkill.add(new Option("Arrangement", "Arrangement"));
+        subSkill.add(new Option("Orchestration", "Orchestration"));
+      } else if (selectedValue === "Audio Engineering") {
+        subSkill.add(new Option("Mixing", "Mixing"));
+        subSkill.add(new Option("Mastering", "Mastering"));
+        subSkill.add(new Option("Sound Design", "Sound Design"));
+      } else if (selectedValue === "Team Sports") {
+        subSkill.add(new Option("Soccer", "Soccer"));
+        subSkill.add(new Option("Basketball", "Basketball"));
+        subSkill.add(new Option("Rugby", "Rugby"));
+        subSkill.add(new Option("Volleyball", "Volleyball"));
+        subSkill.add(new Option("Hockey", "Hockey"));
+      } else if (selectedValue === "Individual Sports") {
+        subSkill.add(new Option("Tennis", "Tennis"));
+        subSkill.add(new Option("Swimming", "Swimming"));
+        subSkill.add(new Option("Gymnastics", "Gymnastics"));
+        subSkill.add(new Option("Track and Field", "Track and Field"));
+        subSkill.add(new Option("Martial Arts", "Martial Arts"));
+      } else if (selectedValue === "Outdoor Activities") {
+        subSkill.add(new Option("Hiking", "Hiking"));
+        subSkill.add(new Option("Climbing", "Climbing"));
+        subSkill.add(new Option("Skiing/Snowboarding", "Skiing/Snowboarding"));
+        subSkill.add(new Option("Cycling", "Cycling"));
+        subSkill.add(new Option("Surfing", "Surfing"));
+      } else if (selectedValue === "Strategy Games") {
+        subSkill.add(new Option("Real-Time Strategy (RTS)", "Real-Time Strategy (RTS)"));
+        subSkill.add(new Option("Turn-Based Strategy (TBS)", "Turn-Based Strategy (TBS)"));
+        subSkill.add(new Option("Multiplayer Online Battle Arena (MOBA)", "Multiplayer Online Battle Arena (MOBA)"));
+      } else if (selectedValue === "First-Person Shooter (FPS)") {
+        subSkill.add(new Option("Tactical Shooters", "Tactical Shooters"));
+        subSkill.add(new Option("Battle Royale", "Battle Royale"));
+      } else if (selectedValue === "Role-Playing Games (RPG)") {
+        subSkill.add(new Option("Action RPG", "Action RPG"));
+        subSkill.add(new Option("MMORPG", "MMORPG"));
+        subSkill.add(new Option("Turn-Based RPG", "Turn-Based RPG"));
+      } else if (selectedValue === "Simulation Games") {
+        subSkill.add(new Option("City Building", "City Building"));
+        subSkill.add(new Option("Flight Simulation", "Flight Simulation"));
+        subSkill.add(new Option("Racing", "Racing"));
+      } else if (selectedValue === "Puzzle Games") {
+        subSkill.add(new Option("Logic Puzzles", "Logic Puzzles"));
+        subSkill.add(new Option("Match-3", "Match-3"));
+        subSkill.add(new Option("Platformers", "Platformers"));
+      } else if (selectedValue === "Drawing and Sketching") {
+        subSkill.add(new Option("Pencil Drawing", "Pencil Drawing"));
+        subSkill.add(new Option("Charcoal Drawing", "Charcoal Drawing"));
+        subSkill.add(new Option("Ink Drawing", "Ink Drawing"));
+        subSkill.add(new Option("Digital Drawing", "Digital Drawing"));
+      } else if (selectedValue === "Painting") {
+        subSkill.add(new Option("Oil Painting", "Oil Painting"));
+        subSkill.add(new Option("Watercolor Painting", "Watercolor Painting"));
+        subSkill.add(new Option("Acrylic Painting", "Acrylic Painting"));
+      } else if (selectedValue === "Sculpting") {
+        subSkill.add(new Option("Clay Sculpting", "Clay Sculpting"));
+        subSkill.add(new Option("Wood Carving", "Wood Carving"));
+        subSkill.add(new Option("Metal Sculpting", "Metal Sculpting"));
+      } else if (selectedValue === "Crafts") {
+        subSkill.add(new Option("Knitting", "Knitting"));
+        subSkill.add(new Option("Crocheting", "Crocheting"));
+        subSkill.add(new Option("Origami", "Origami"));
+        subSkill.add(new Option("Pottery", "Pottery"));
+      } else if (selectedValue === "Speaking") {
+        subSkill.add(new Option("Conversational Fluency", "Conversational Fluency"));
+        subSkill.add(new Option("Pronunciation", "Pronunciation"));
+        subSkill.add(new Option("Public Speaking", "Public Speaking"));
+      } else if (selectedValue === "Writing") {
+        subSkill.add(new Option("Creative Writing", "Creative Writing"));
+        subSkill.add(new Option("Technical Writing", "Technical Writing"));
+        subSkill.add(new Option("Copywriting", "Copywriting"));
+      } else if (selectedValue === "Reading Comprehension") {
+        subSkill.add(new Option("Speed Reading", "Speed Reading"));
+        subSkill.add(new Option("Analytical Reading", "Analytical Reading"));
+        subSkill.add(new Option("Critical Reading", "Critical Reading"));
+      } else if (selectedValue === "Translation") {
+        subSkill.add(new Option("Written Translation", "Written Translation"));
+        subSkill.add(new Option("Interpretation", "Interpretation"));
+        subSkill.add(new Option("Localization", "Localization"));
+      } else {
+        subSkill.add(new Option("--Please choose a main skill first--", ""));
+      }
+    }
+
+
  
 
 function updateSubSkillsOptions2() {
@@ -144,38 +266,122 @@ function updateSubSkillsOptions2() {
   var selectedValue = mainSkill.value;
   
   // Add options to subSkill based on selectedValue
-  if (selectedValue === "Technical") {
-    subSkill.add(new Option("Programming", "Programming"));
-    subSkill.add(new Option("IT and Networking", "IT and Networking"));
-    subSkill.add(new Option("Graphic Design", "Graphic Design"));
-    subSkill.add(new Option("Hardware", "Hardware"));
-  } else if (selectedValue === "Music") {
-    subSkill.add(new Option("Instrumental Performance", "Instrumental Performance"));
-    subSkill.add(new Option("Vocal Performance", "Vocal Performance"));
-    subSkill.add(new Option("Music Theory", "Music Theory"));
-    subSkill.add(new Option("Audio Engineering", "Audio Engineering"));
-  } else if (selectedValue === "Sports") {
-    subSkill.add(new Option("Team Sports", "Team Sports"));
-    subSkill.add(new Option("Individual Sports", "Individual Sports"));
-    subSkill.add(new Option("Outdoor Activities", "Outdoor Activities"));
-  } else if (selectedValue === "Gaming") {
-    subSkill.add(new Option("Strategy Games", "Strategy Games"));
-    subSkill.add(new Option("First-Person Shooter (FPS)", "First-Person Shooter (FPS)"));
-    subSkill.add(new Option("Role-Playing Games (RPG)", "Role-Playing Games (RPG)"));
-    subSkill.add(new Option("Simulation Games", "Simulation Games"));
-    subSkill.add(new Option("Puzzle Games", "Puzzle Games"));
-  } else if (selectedValue === "Art and Crafts") {
-    subSkill.add(new Option("Drawing and Sketching", "Drawing and Sketching"));
-    subSkill.add(new Option("Painting", "Painting"));
-    subSkill.add(new Option("Sculpting", "Sculpting"));
-    subSkill.add(new Option("Crafts", "Crafts"));
-  } else if (selectedValue === "Language") {
-    subSkill.add(new Option("Speaking", "Speaking"));
-    subSkill.add(new Option("Writing", "Writing"));
-    subSkill.add(new Option("Reading Comprehension", "Reading Comprehension"));
-    subSkill.add(new Option("Translation", "Translation"));
-  }
-}
+  if (selectedValue === "Programming") {
+        subSkill.add(new Option("Web Development", "Web Development"));
+        subSkill.add(new Option("Mobile Development", "Mobile Development"));
+        subSkill.add(new Option("Software Engineering", "Software Engineering"));
+        subSkill.add(new Option("Data Science", "Data Science"));
+        subSkill.add(new Option("Algorithms and Data Structures", "Algorithms and Data Structures"));
+      } else if (selectedValue === "IT and Networking") {
+        subSkill.add(new Option("Network Administration", "Network Administration"));
+        subSkill.add(new Option("Cybersecurity", "Cybersecurity"));
+        subSkill.add(new Option("System Administration", "System Administration"));
+        subSkill.add(new Option("Cloud Computing", "Cloud Computing"));
+      } else if (selectedValue === "Graphic Design") {
+        subSkill.add(new Option("Illustration", "Illustration"));
+        subSkill.add(new Option("UI/UX Design", "UI/UX Design"));
+        subSkill.add(new Option("Motion Graphics", "Motion Graphics"));
+      } else if (selectedValue === "Hardware") {
+        subSkill.add(new Option("Electronics", "Electronics"));
+        subSkill.add(new Option("Robotics", "Robotics"));
+        subSkill.add(new Option("Circuit Design", "Circuit Design"));
+      } else if (selectedValue === "Instrumental Performance") {
+        subSkill.add(new Option("Guitar", "Guitar"));
+        subSkill.add(new Option("Piano", "Piano"));
+        subSkill.add(new Option("Violin", "Violin"));
+        subSkill.add(new Option("Drums", "Drums"));
+        subSkill.add(new Option("Flute", "Flute"));
+      } else if (selectedValue === "Vocal Performance") {
+        subSkill.add(new Option("Classical", "Classical"));
+        subSkill.add(new Option("Pop", "Pop"));
+        subSkill.add(new Option("Jazz", "Jazz"));
+        subSkill.add(new Option("Opera", "Opera"));
+      } else if (selectedValue === "Music Theory") {
+        subSkill.add(new Option("Harmony", "Harmony"));
+        subSkill.add(new Option("Composition", "Composition"));
+        subSkill.add(new Option("Arrangement", "Arrangement"));
+        subSkill.add(new Option("Orchestration", "Orchestration"));
+      } else if (selectedValue === "Audio Engineering") {
+        subSkill.add(new Option("Mixing", "Mixing"));
+        subSkill.add(new Option("Mastering", "Mastering"));
+        subSkill.add(new Option("Sound Design", "Sound Design"));
+      } else if (selectedValue === "Team Sports") {
+        subSkill.add(new Option("Soccer", "Soccer"));
+        subSkill.add(new Option("Basketball", "Basketball"));
+        subSkill.add(new Option("Rugby", "Rugby"));
+        subSkill.add(new Option("Volleyball", "Volleyball"));
+        subSkill.add(new Option("Hockey", "Hockey"));
+      } else if (selectedValue === "Individual Sports") {
+        subSkill.add(new Option("Tennis", "Tennis"));
+        subSkill.add(new Option("Swimming", "Swimming"));
+        subSkill.add(new Option("Gymnastics", "Gymnastics"));
+        subSkill.add(new Option("Track and Field", "Track and Field"));
+        subSkill.add(new Option("Martial Arts", "Martial Arts"));
+      } else if (selectedValue === "Outdoor Activities") {
+        subSkill.add(new Option("Hiking", "Hiking"));
+        subSkill.add(new Option("Climbing", "Climbing"));
+        subSkill.add(new Option("Skiing/Snowboarding", "Skiing/Snowboarding"));
+        subSkill.add(new Option("Cycling", "Cycling"));
+        subSkill.add(new Option("Surfing", "Surfing"));
+      } else if (selectedValue === "Strategy Games") {
+        subSkill.add(new Option("Real-Time Strategy (RTS)", "Real-Time Strategy (RTS)"));
+        subSkill.add(new Option("Turn-Based Strategy (TBS)", "Turn-Based Strategy (TBS)"));
+        subSkill.add(new Option("Multiplayer Online Battle Arena (MOBA)", "Multiplayer Online Battle Arena (MOBA)"));
+      } else if (selectedValue === "First-Person Shooter (FPS)") {
+        subSkill.add(new Option("Tactical Shooters", "Tactical Shooters"));
+        subSkill.add(new Option("Battle Royale", "Battle Royale"));
+      } else if (selectedValue === "Role-Playing Games (RPG)") {
+        subSkill.add(new Option("Action RPG", "Action RPG"));
+        subSkill.add(new Option("MMORPG", "MMORPG"));
+        subSkill.add(new Option("Turn-Based RPG", "Turn-Based RPG"));
+      } else if (selectedValue === "Simulation Games") {
+        subSkill.add(new Option("City Building", "City Building"));
+        subSkill.add(new Option("Flight Simulation", "Flight Simulation"));
+        subSkill.add(new Option("Racing", "Racing"));
+      } else if (selectedValue === "Puzzle Games") {
+        subSkill.add(new Option("Logic Puzzles", "Logic Puzzles"));
+        subSkill.add(new Option("Match-3", "Match-3"));
+        subSkill.add(new Option("Platformers", "Platformers"));
+      } else if (selectedValue === "Drawing and Sketching") {
+        subSkill.add(new Option("Pencil Drawing", "Pencil Drawing"));
+        subSkill.add(new Option("Charcoal Drawing", "Charcoal Drawing"));
+        subSkill.add(new Option("Ink Drawing", "Ink Drawing"));
+        subSkill.add(new Option("Digital Drawing", "Digital Drawing"));
+      } else if (selectedValue === "Painting") {
+        subSkill.add(new Option("Oil Painting", "Oil Painting"));
+        subSkill.add(new Option("Watercolor Painting", "Watercolor Painting"));
+        subSkill.add(new Option("Acrylic Painting", "Acrylic Painting"));
+      } else if (selectedValue === "Sculpting") {
+        subSkill.add(new Option("Clay Sculpting", "Clay Sculpting"));
+        subSkill.add(new Option("Wood Carving", "Wood Carving"));
+        subSkill.add(new Option("Metal Sculpting", "Metal Sculpting"));
+      } else if (selectedValue === "Crafts") {
+        subSkill.add(new Option("Knitting", "Knitting"));
+        subSkill.add(new Option("Crocheting", "Crocheting"));
+        subSkill.add(new Option("Origami", "Origami"));
+        subSkill.add(new Option("Pottery", "Pottery"));
+      } else if (selectedValue === "Speaking") {
+        subSkill.add(new Option("Conversational Fluency", "Conversational Fluency"));
+        subSkill.add(new Option("Pronunciation", "Pronunciation"));
+        subSkill.add(new Option("Public Speaking", "Public Speaking"));
+      } else if (selectedValue === "Writing") {
+        subSkill.add(new Option("Creative Writing", "Creative Writing"));
+        subSkill.add(new Option("Technical Writing", "Technical Writing"));
+        subSkill.add(new Option("Copywriting", "Copywriting"));
+      } else if (selectedValue === "Reading Comprehension") {
+        subSkill.add(new Option("Speed Reading", "Speed Reading"));
+        subSkill.add(new Option("Analytical Reading", "Analytical Reading"));
+        subSkill.add(new Option("Critical Reading", "Critical Reading"));
+      } else if (selectedValue === "Translation") {
+        subSkill.add(new Option("Written Translation", "Written Translation"));
+        subSkill.add(new Option("Interpretation", "Interpretation"));
+        subSkill.add(new Option("Localization", "Localization"));
+      } else {
+        subSkill.add(new Option("--Please choose a main skill first--", ""));
+      }
+    }
+
+
 </script>
 
 

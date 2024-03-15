@@ -1,4 +1,4 @@
-const { string } = require("joi");
+const { string, number } = require("joi");
 const mongoose=require("mongoose");
 const Schema=mongoose.Schema;
 
@@ -15,6 +15,9 @@ const skillSchema=new Schema(
         //     required:true,
         // },
         college:{
+            type:String,
+        },
+        year:{
             type:String,
         },
         phone:{

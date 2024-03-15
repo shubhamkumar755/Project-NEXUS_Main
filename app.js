@@ -30,7 +30,7 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 const {vitMap,code}=require("./public/js/vitMap.js");
 
 async function main(){
-    await mongoose.connect(mongoURL);
+    await mongoose.connect(Atlas_URL);
 }
 main().then(()=>{
         console.log("connected");
@@ -39,7 +39,7 @@ main().then(()=>{
 })
 
 const store=MongoStore.create({
-    mongoUrl:mongoURL,
+    mongoUrl:Atlas_URL,
     crypto:{
         secret:process.env.SECRET,
     },
