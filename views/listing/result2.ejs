@@ -1,19 +1,24 @@
 <%layout("layouts/boilerplate")%>
 <style>
-    .card{
-        border: none;
-        padding: 0;
-    }
+    
     .main{
         height: 100%;
+    }
+    .change{
+        background-color: transparent;
+        color: white;
+        border: solid 3px white;
+        border-radius: 20px;
+        padding: 15px;
     }
 </style>
 <script>
     const mapToken="<%=process.env.MAP_TOKEN%>";
     const listing = <%-JSON.stringify(obj)%>;
 </script>
-<div class=" main row col-xl-12 mt-5 ">
-    <div class="card col-12 mb-3 offset-1">
+<br><br><br>
+<div class=" main row col-xl-12 mt-5 me-5">
+    <div class="card col-10 mb-3 offset-1 change">
         <div class="row g-0">
         <div class="col-xl-4 ">
             <img src="<%=obj.image.url%>" class="img-fluid rounded-start" alt="...">

@@ -165,4 +165,5 @@ body{
 #map { 
     height: 250px;
     width: 70vh;
+    border-radius:10px ;
  }

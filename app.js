@@ -246,9 +246,18 @@ app.get("/account",isLoggedIn,async(req,res)=>{
 
 //Skills
 app.get("/skills",isLoggedIn,(req,res)=>{
-    res.render("./listing2/skills_show.ejs");
+    res.render("./listing2/show.ejs");
 })
-app.post("/skills",isLoggedIn,async(req,res)=>{
+app.get("/skills_add",(req,res)=>{
+    res.render("./listing2/skills_add.ejs");
+})
+app.get("/skills_search",async(req,res)=>{
+    let user=req.session.passport.user;
+    let obj1=await User.find({username:user});
+    let allSkills=await Skills.find({});
+    res.render("./listing2/skills_search.ejs",{allSkills,obj1});
+})
+app.post("/skills_add",isLoggedIn,async(req,res)=>{
     if(!req.body.obj){
         console.log(req.body.obj);
     }
@@ -259,7 +268,7 @@ app.post("/skills",isLoggedIn,async(req,res)=>{
     newUser.username=obj1[0].username;
     let save=await newUser.save();
     let allSkills=await Skills.find({});
-    res.render("./listing2/skills_result.ejs",{allSkills,obj1});
+    res.render("./listing2/skills_search.ejs",{allSkills,obj1});
 })
 app.post("/skills_search",isLoggedIn,(req,res)=>{
     let {category1,category2}=req.body;

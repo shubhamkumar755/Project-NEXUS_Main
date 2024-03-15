@@ -1,7 +1,15 @@
 <%layout("layouts/boilerplate")%>
-
+<style>
+    .change{
+        background-color: transparent;
+        color: white;
+        border: solid 3px white;
+        border-radius: 20px;
+        padding: 15px;
+    }
+</style>
 <div>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-5 ms-3 me-3">
         <%let flag=false%>
         <%let flag2=false%>
         <%for(let item of found){%>
@@ -42,14 +50,14 @@
                         <%if(sum>=70 && flag){%>
                             <%flag2=true%>
                             <a href="/result2/<%=item.id%>" class="listing-link">
-                                <div class="card col listing-card mb-5">
+                                <div class="card col listing-card mb-5 change">
                                     <img src="<%=item.image.url%>" class="card-img-top" style="height: 20rem;" alt="...">
                                     <div class="card-body">
                                     <p class="card-text">
-                                        <h3 class="card-title"><b>Item:</b><%=item.keywords2%></h3>
-                                        <p class="card-text"><b>Location:</b><%=item.location%></p>
-                                        <p class="card-text"><b>Date:</b><%=item.lostDate.toString().split(" ").slice(0,4).join("-")%></p>
-                                        <p class="card-text"><b>Match Percentage is</b>:<%=sum%></p>
+                                        <h3 class="card-title mb-3"><center><b><%=item.keywords2%></b></center></h3>
+                                        <p class="card-text"><b>Location&nbsp;:&nbsp;&nbsp;</b><%=item.location%></p>
+                                        <p class="card-text"><b>Date&nbsp;:</b>&nbsp;&nbsp;<%=item.lostDate.toString().split(" ").slice(0,4).join("-")%></p>
+                                        <p class="card-text"><b>Match&nbsp;</b>:&nbsp;&nbsp;<%=sum%>%</p>
                                     </p>
                                     </div>
                                 </div>
