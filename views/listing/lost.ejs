@@ -17,23 +17,50 @@
                     <input name="obj[title]" placeholder="enter title" type="text" class="form-control" required/>
                     <div class="valid-feedback">Title looks good</div>
                 </div> --> 
-                
-                <div class="mb-3">
-                    <label for="location" class="form-label">Found Location</label>
-                        <input name="obj[location]" placeholder="enter location" type="text" class="form-control" required/>
-                        <div class="invalid-feedback">Location should be valid</div>
-                </div>
                 <div class="row">
-                    
-                    <div class="mb-3 col-md-6">
-                        <label for="keyword" class="form-label" >Keyword</label>
-                        <select name="obj[keywords]" id="cars" required class="form-control">
-                            <option value="electronic">electronic</option>
-                            <option value="jewellery">jewellery</option>
-                            <option value="clothing">clothing</option>
-                            <option value="accessories">accessories</option>
+                    <div class="mb-3 col-6">
+                        <label for="location" class="form-label">Nearest Found Location</label>
+                        <select name="obj[location]" required class="form-control">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="Mahatma Gandhi Block">Mahatma Gandhi Block</option>
+                            <option value="Pearl Research Park">Pearl Research Park</option>
+                            <option value="Silver Jubilee Tower">Silver Jubilee Tower</option>
+                            <option value="Technology Tower">Technology Tower</option>
+                            <option value="SMV">SMV</option>
+                            <option value="Main Building">Main Building</option>
+                            <option value="CDMM">CDMM</option>
+                            <option value="GD Naidu Block">GD Naidu Block</option>
+                            <option value="MH - A Block">MH - A Block</option>
+                            <option value="MH - B Block">MH - B Block</option>
+                            <option value="MH - B Annex">MH - B Annex</option>
+                            <option value="MH - C Block">MH - C Block</option>
+                            <option value="MH - D Block">MH - D Block</option>
+                            <option value="MH - D Annex">MH - D Annex</option>
+                            <option value="MH - E Block">MH - E Block</option>
+                            <option value="MH - F Block">MH - F Block</option>
+                            <option value="MH - G Block">MH - G Block</option>
+                            <option value="MH - H Block">MH - H Block</option>
+                            <option value="MH - J Block">MH - J Block</option>
+                            <option value="MH - K Block">MH - K Block</option>
+                            <option value="MH - L Block">MH - L Block</option>
+                            <option value="MH - M Block">MH - M Block</option>
+                            <option value="MH - N Block">MH - N Block</option>
+                            <option value="MH - P Block">MH - P Block</option>
+                            <option value="MH - Q Block">MH - Q Block</option>
+                            <option value="MH - R Block">MH - R Block</option>
+                            <option value="MH - S Block">MH - S Block</option>
+                            <option value="MH - T Block">MH - T Block</option>
+                            <option value="LH - A Block">LH - A Block</option>
+                            <option value="LH - B Block">LH - B Block</option>
+                            <option value="LH - C Block">LH - C Block</option>
+                            <option value="LH - D Block">LH - D Block</option>
+                            <option value="LH - E Block">LH - E Block</option>
+                            <option value="LH - F Block">LH - F Block</option>
+                            <option value="LH - G Block">LH - G Block</option>
+                            <option value="LH - H Block">LH - H Block</option>
+                            <option value="Food Court">Food Court</option>
                         </select>
-                        <div class="invalid-feedback">Please enter a short description</div>
+                            <div class="invalid-feedback">Location should be valid</div>
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="date" class="form-label">Lost Date</label>
@@ -41,6 +68,60 @@
                         <div class="invalid-feedback">Date is required</div>
                     </div>
                 </div>
+                <div class="row">
+                    
+                    <div class="mb-3 col-md-6">
+                        <label for="keyword" class="form-label" >Category</label>
+                        <select name="obj[keywords]" id="keyword" required class="form-control" onchange="updateKeyword2Options()">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="academic materials">Academic Materials</option>
+                            <option value="clothing">Clothing and Shoes</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="jewellery">Jewellery</option>
+                            <option value="personal accessories">Personal Accessories</option>
+                            <option value="sports gear">Sports Gear</option>
+                            <option value="transportation">Transportation</option>
+                            <option value="miscellaneous">Miscellaneous</option>
+                            <option value="important documents">Important Documents</option>
+                            <option value="technology accessories">Technology Accessories</option>
+                            <option value="musical instruments">Musical Instruments</option>
+                            <option value="room keys">Room Keys</option>
+                        </select>
+                        <div class="invalid-feedback">Please enter a short description</div>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="keyword2" class="form-label" >Sub-Category</label>
+                        <select name="obj[keywords2]" id="keyword2" required class="form-control">
+                            
+                        </select>
+                        <div class="invalid-feedback">Please enter a short description</div>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                    <div class="mb-3 col-md-6">
+                        <label for="color" class="form-label" >Colour</label>
+                        <select name="obj[color]" id="color" required class="form-control">
+                            <option value="Black">Black</option>
+                                <option value="White">White</option>
+                                <option value="Gray">Gray</option>
+                                <option value="Brown">Brown</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Red">Red</option>
+                                <option value="Green">Green</option>
+                                <option value="Yellow">Yellow</option>
+                                <option value="Orange">Orange</option>
+                                <option value="Pink">Pink</option>
+                        </select>
+                        <div class="invalid-feedback">Please enter a short description</div>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="brand" class="form-label" >Brand Name</label>
+                        <input type="text" name="obj[brand]" placeholder="Enter the name of the brand" class="form-control">
+                        <div class="invalid-feedback">Please enter a short description</div>
+                    </div>
+                </div>
+
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
                     <textarea name="obj[description]" placeholder="enter description" type="text" class="form-control" required></textarea>
@@ -53,3 +134,101 @@
 
 </div>
 </body>
+<script>
+    function updateKeyword2Options() {
+  var keyword = document.getElementById("keyword");
+  var keyword2 = document.getElementById("keyword2");
+  
+  // Clear existing options
+  keyword2.innerHTML = "";
+  
+  // Get selected value from keyword
+  var selectedValue = keyword.value;
+  
+  // Add options to keyword2 based on selectedValue
+  if (selectedValue === "academic materials") {
+    keyword2.add(new Option("Textbooks", "textbooks"));
+    keyword2.add(new Option("Notebooks", "notebooks"));
+    keyword2.add(new Option("Stationery", "stationery"));
+    keyword2.add(new Option("Calculators", "calculators"));
+    keyword2.add(new Option("Laboratory Equipment", "laboratory equipment"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "clothing") {
+    keyword2.add(new Option("Tops", "tops"));
+    keyword2.add(new Option("Bottoms", "bottoms"));
+    keyword2.add(new Option("Outerwear", "outerwear"));
+    keyword2.add(new Option("Shoes", "shoes"));
+    keyword2.add(new Option("Accessories", "accessories"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "electronics") {
+    keyword2.add(new Option("Phones", "phones"));
+    keyword2.add(new Option("Laptops", "laptops"));
+    keyword2.add(new Option("Tablets", "tablets"));
+    keyword2.add(new Option("Cameras", "cameras"));
+    keyword2.add(new Option("Chargers", "chargers"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "jewellery") {
+    keyword2.add(new Option("Necklaces", "necklaces"));
+    keyword2.add(new Option("Bracelets", "bracelets"));
+    keyword2.add(new Option("Earrings", "earrings"));
+    keyword2.add(new Option("Rings", "rings"));
+    keyword2.add(new Option("Watches", "watches"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "personal accessories") {
+    keyword2.add(new Option("Wallets", "wallets"));
+    keyword2.add(new Option("Sunglasses", "sunglasses"));
+    keyword2.add(new Option("Hats", "hats"));
+    keyword2.add(new Option("Scarves", "scarves"));
+    keyword2.add(new Option("Belts", "belts"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "sports gear") {
+    keyword2.add(new Option("Balls", "balls"));
+    keyword2.add(new Option("Rackets", "rackets"));
+    keyword2.add(new Option("Bats", "bats"));
+    keyword2.add(new Option("Helmets", "helmets"));
+    keyword2.add(new Option("Protective Gear", "protective gear"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "transportation") {
+    keyword2.add(new Option("Bicycles", "bicycles"));
+    keyword2.add(new Option("Skateboards", "skateboards"));
+    keyword2.add(new Option("Scooters", "scooters"));
+    keyword2.add(new Option("Helmets", "helmets"));
+    keyword2.add(new Option("Keys", "keys"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "miscellaneous") {
+    keyword2.add(new Option("Toys", "toys"));
+    keyword2.add(new Option("Umbrellas", "umbrellas"));
+    keyword2.add(new Option("Bags", "bags"));
+    keyword2.add(new Option("Miscellaneous", "miscellaneous"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "important documents") {
+    keyword2.add(new Option("Passports", "passports"));
+    keyword2.add(new Option("ID Cards", "ID cards"));
+    keyword2.add(new Option("Licenses", "licenses"));
+    keyword2.add(new Option("Certificates", "certificates"));
+    keyword2.add(new Option("Permits", "permits"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "technology accessories") {
+    keyword2.add(new Option("Headphones", "headphones"));
+    keyword2.add(new Option("Cables", "cables"));
+    keyword2.add(new Option("Cases", "cases"));
+    keyword2.add(new Option("Adapters", "adapters"));
+    keyword2.add(new Option("Memory Cards", "memory cards"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "musical instruments") {
+    keyword2.add(new Option("Guitars", "guitars"));
+    keyword2.add(new Option("Pianos", "pianos"));
+    keyword2.add(new Option("Violins", "violins"));
+    keyword2.add(new Option("Drums", "drums"));
+    keyword2.add(new Option("Flutes", "flutes"));
+    keyword2.add(new Option("Others", "others"));
+} else if (selectedValue === "room keys") {
+    keyword2.add(new Option("Dorm Keys", "dorm keys"));
+    keyword2.add(new Option("Hotel Keys", "hotel keys"));
+    keyword2.add(new Option("Apartment Keys", "apartment keys"));
+    keyword2.add(new Option("Office Keys", "office keys"));
+    keyword2.add(new Option("Others", "others"));
+}
+
+}
+</script>

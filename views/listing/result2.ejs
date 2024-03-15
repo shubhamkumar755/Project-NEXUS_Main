@@ -8,6 +8,10 @@
         height: 100%;
     }
 </style>
+<script>
+    const mapToken="<%=process.env.MAP_TOKEN%>";
+    const listing = <%-JSON.stringify(obj)%>;
+</script>
 <div class=" main row col-xl-12 mt-5 ">
     <div class="card col-12 mb-3 offset-1">
         <div class="row g-0">
@@ -15,22 +19,25 @@
             <img src="<%=obj.image.url%>" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-xl-8 ">
-            <div class="card-body ms-5 mt-5 mb-3 me-5">
-                <br>
+            <div class="card-body ms-5 mb-3 me-3">
+
             <h1 class="card-title"><b><%=obj.keywords%></b></h1>
-            <br>
-            <p class="card-text"><b>FOUND LOCATION:</b>&nbsp;&nbsp;&nbsp;<%=obj.location%></p>
-            <br>
+            
+            <!-- <p class="card-text"><b>FOUND LOCATION:</b>&nbsp;&nbsp;&nbsp;<%=obj.location%></p>
+            <br> -->
             <p class="card-text"><b>FOUND DATE:</b>&nbsp;&nbsp;&nbsp;<%=obj.lostDate.toString().split(" ").slice(0,4).join("-")%></p>
-            <br>
+            
             <p class="card-text"><b>PHONE NO:</b>&nbsp;&nbsp;&nbsp;<%=obj.phone%></p>
-            <br>
+            
             <p class="card-text"><b>DESCRIPTION:</b>&nbsp;&nbsp;&nbsp;<%=obj.description%></p>
-            </div>
+            <div id="map"></div>
         </div>
+            
+        </div>
+
         </div>
     </div>
 </div>
 
-
+<script src="/js/map.js"></script>
  

@@ -23,6 +23,10 @@ const {isLoggedIn,saveRedirectUrl}=require("./middleware.js");
 const multer  = require('multer')//multer helps to parse the file format for images , as till now we just used to use urlencoded type parsing which is used for json 
 const {storage}=require("./cloudConfig.js");
 const upload = multer({storage}) 
+const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
+const mapToken=process.env.MAP_TOKEN;
+const geocodingClient = mbxGeocoding({ accessToken: mapToken });
+const {vitMap,code}=require("./public/js/vitMap.js");
 
 async function main(){
     await mongoose.connect(mongoURL);
@@ -100,14 +104,19 @@ app.post("/found", isLoggedIn,upload.single('obj[image]'),async(req,res,next)=>{
     if(!req.body.obj){
         console.log(req.body.obj);
     }
-
+    let response=await geocodingClient.forwardGeocode({
+        query: req.body.obj.location,
+        limit: 1
+      }).send();
     let url=req.file.path;
     let filename=req.file.filename; 
     let user2=req.session.passport.user;
     let obj2=await User.find({username:user2});
     req.body.obj.phone=obj2[0].phone;
     let newItems=new Items(req.body.obj);
-    newItems.image={url,filename};;
+    newItems.image={url,filename};
+    response.body.features[0].geometry.coordinates=code(req.body.obj.location);
+    newItems.geometry=response.body.features[0].geometry;
     let save=await newItems.save();
     req.flash("success","The concerned person will contact you soon :)")
     res.redirect("/");

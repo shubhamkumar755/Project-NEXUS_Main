@@ -27,19 +27,29 @@ const itemSchema=new Schema(
         {
             type:String,
         },
-        // geometry:{//mongodb has a special type to store geocode  
-        //     type:{
-        //         type:String,
-        //         enum:['Point'],
-        //         required:true
-        //     },
-        //     coordinates:{
-        //         type:[Number],
-        //         required:true
-        //     }
-        // },
+        geometry:{//mongodb has a special type to store geocode  
+            type:{
+                type:String,
+                enum:['Point'],
+                required:true
+            },
+            coordinates:{
+                type:[Number],
+                required:true
+            }
+        },
         keywords:
         {
+            type:String,
+        },
+        keywords2:
+        {
+            type:String,
+        },
+        color:{
+            type:String,
+        },
+        brand:{
             type:String,
         },
         description:

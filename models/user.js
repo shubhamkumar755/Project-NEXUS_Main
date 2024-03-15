@@ -13,6 +13,9 @@ const userSchema=new Schema({
         min:999999999,
         max:10000000000,
         required:true,
+    },
+    college:{
+        type:String,
     }
     //here we have not declared the schema for user id but if we directly declare the userid while making a user then it will automatiicaly create a schema for user id
 })

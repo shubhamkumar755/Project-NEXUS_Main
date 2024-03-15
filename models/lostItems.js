@@ -33,6 +33,16 @@ const lostUser=new Schema(
         {
             type:String,
         },
+        keywords2:
+        {
+            type:String,
+        },
+        color:{
+            type:String,
+        },
+        brand:{
+            type:String,
+        },
         description:
         {
             type:String,
