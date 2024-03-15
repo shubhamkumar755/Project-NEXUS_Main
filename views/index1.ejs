@@ -1,0 +1,302 @@
+<%layout("layouts/boilerplate")%>
+
+<style>
+    .main {
+            display: inline-flex;
+            font-size: 30px;
+            padding-top: 60px;
+            height: 240px;
+        }
+
+        #main {
+            font-family: Rock Salt;
+            background: linear-gradient(to right, steelblue, aqua, limegreen);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            color: black;
+            font-size: 70px;
+            padding: 10px;
+
+        }
+
+         #quote{
+            position: relative;
+            top: 50%;  
+            width: 24em;
+            margin: 0 auto;
+            border-right: 2px solid rgba(255,255,255,.75);
+            font-size: 180%;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            transform: translateY(-50%);    
+        }
+
+
+        #quote {
+
+            font-family: 'Monospace', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: grey;
+            margin-top: 30px;
+            font-size: 40px;
+            /* -webkit-text-stroke: 1px grey; */
+            margin-bottom: 4%;
+
+        }
+
+        #quote{
+            animation: typewriter 4s steps(50) 0s normal both,
+             blinkTextCursor 500ms steps(50) infinite normal;
+        }
+
+        @keyframes typewriter{
+        from{width: 0;}
+        to{width: 13em;}
+        }
+
+        @keyframes blinkTextCursor{
+        from{border-right-color: rgba(255,255,255,.75);}
+        to{border-right-color: transparent}
+        }
+
+        .btnn{
+            border-radius: 80px;
+            width: 260px;
+            height: 80px;
+            font-size: 25px;
+            margin: 15px;
+            margin-bottom: 50px;
+            cursor: pointer;
+            transition: background-color 0.7s ease;
+            
+        }
+        .btns{
+            display: flex;
+            justify-content: center;
+        }
+        .login {
+            background-color: transparent;
+            border: none;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .login:hover {
+            background-color: white;
+            border: 1px solid white;
+            color: steelblue;
+            opacity: 0.7;
+        }
+
+        .signup {
+            background-color: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+
+        .signup:hover {
+            background-color: white;
+            border: none;
+            color: limegreen;
+            opacity: 0.7;
+        }
+
+
+
+        .line {
+            height: 500px;
+            width: 7px;
+            position: absolute;
+            top: 750px;
+            left: 4%;
+            background-image: linear-gradient(aqua, limegreen);
+            /* background-color: transparent; */
+            animation-name: line;
+            animation-duration: 30s;
+            animation-direction: forwards;
+            animation-timeline: scroll();
+            opacity: 0.5;
+            /* filter: blur(5px); */
+            z-index: -9px;
+
+        }
+
+        @keyframes line {
+            from {
+                transform: ScaleY(0);
+            }
+
+            to {
+                transform: ScaleY(2);
+            }
+        }
+
+
+        .features {
+            background-color: transparent;
+            font-size: 20px;
+            width: 65%;
+            font-family: 'Monospace', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-radius: 20px;
+            
+            border: 2px solid grey;
+            
+            animation: line;
+            animation-name: features;
+            animation-duration: 5s;
+            animation-direction: forwards;
+            /* animation-iteration-count: infinite; */
+            animation-timeline: scroll(block nearest);
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            margin: 13px;
+            padding: 13px;
+
+        }
+
+        .feat1 {
+            margin-left: 10%;
+            margin-top: 10%;
+            display: flex;
+            
+        }
+        
+      
+
+        .feat2 {
+            display: flex;
+            margin-top: 10%;
+        }
+
+        img{
+            width: 15%;
+            height: 15%;
+            margin-top: 20px;
+            animation-name: imgs;
+            animation-duration: 5s;
+            animation-direction: forwards;
+            /* animation-iteration-count: infinite; */
+            animation-timeline: scroll();
+        }
+        
+        .f1{
+            margin-right: 100px;
+        }
+        .f2{
+            margin-left: 100px;
+        }
+        .img2{
+            margin-left: 150px;
+        }
+        #h1 {
+            font-size: 45px;
+            /* margin-right: 300px; */
+        }
+
+        #arr {
+            font-size: 40px;
+            float: right;
+            padding-left: px;
+            opacity: 0;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        
+
+        .f1:hover {
+            transition-duration: 0.25s;
+            -webkit-box-shadow: 0px 0px 53px 0px steelblue;
+            -moz-box-shadow: 0px 0px 53px 0px steelblue;
+            box-shadow: 0px 0px 25px 0px aqua;
+            opacity: 1;
+            Transform: scale(1.009);
+        }
+
+        .f2:hover {
+            transition-duration: 0.25s;
+            -webkit-box-shadow: 0px 0px 53px 0px steelblue;
+            -moz-box-shadow: 0px 0px 53px 0px steelblue;
+            box-shadow: 0px 0px 25px 0px limegreen;
+            opacity: 1;
+            Transform: scale(1.009);
+        }
+
+
+        @keyframes features {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes imgs {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+</style>
+
+<body>
+    <center>
+        <br><br><br><br>
+        <div class="center">
+            <div class="main">
+                <h1 id="main">NEXUS&nbsp;</h1>
+                <!-- <div id="cbox">
+                    <h1 id="college">VIT</h1>
+                </div><br> -->
+            </div>
+            <h2 id="quote">Connect. Discover. Thrive.</h2>
+            <div class="btns">
+
+                <a href="/login"><button class="btnn login">Login</button></a>
+                <a href="/signup"><button class="btnn signup">Signup</button></a>
+            </div>
+        </div>
+    </center>  
+
+
+    <div class="line"></div>
+    <div class="img1">
+    <a href="/lost&found">
+        <div class="feat1">
+            <div class="features f1">
+                <span id="h1">Lost & Found </span><span id="arr">&#x279C;</span></h1>
+                <!-- <div id="arr">&#x279C;</div> -->
+                <p>Nexus Lost & Found facilitates the seamless return of lost items to their owners within college
+                    campuses,
+                    fostering a
+                    supportive community through acts of kindness and collaboration.</p>
+            </div>
+            <img src="/images/search (1).png ">
+        </div>
+    </a>
+</div>
+
+
+    <div class="img2">
+    <a href="skills">
+        <div class="feat2">
+            <img src="/images/distributed (1).png">
+            <div class="features f2">
+                <span id="h1">Skill Synergy Connect </span><span id="arr">&#x279C;</span></h1>
+                <!-- <div id="arr">&#x279C;</div> -->
+                <p>SkillSynergy Connect: Where individuals with complementary skills and shared interests converge,
+                    fostering
+                    collaborations and meaningful connections.</p>
+            </div>
+
+        </div>
+    </a> 
+</div>
+</body>

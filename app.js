@@ -90,12 +90,16 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.get("/",(req,res)=>{
-    res.render("./listing/show.ejs");
+app.get("/login&signup",(req,res)=>{
+    res.render("index1.ejs");
 }) 
 
-
-
+app.get("/",isLoggedIn,(req,res)=>{
+    res.render("index2.ejs");
+})
+app.get("/lost&found",(req,res)=>{
+    res.render("./listing/show.ejs")
+})
 //FOUND
 app.get("/found",isLoggedIn,(req,res)=>{
     
@@ -215,7 +219,7 @@ app.post("/login",saveRedirectUrl,passport.authenticate("local",{failureRedirect
     //pass.auth authenticate the pass and it does using a middleware
     //failureflash means if the authetification failes the we will get a falsh message 
     req.flash("welcome to Lost & Found ! you are logged in");
-    let redirectUrl=res.locals.redirectUrl || "/"; //means if res.locals.redirecturl exists the use that otherwise the value becomes /listing 
+    let redirectUrl=res.locals.redirectUrl || "/"; //means if res.locals.redirecturl exists the use that otherwise the value becomes 
     res.redirect(redirectUrl);//here passport will create a problem as when we login ,  passport will reset the session and so the stored url will get deleted therfore we save this url in locals as it can be accessed from anywhere
 })
 app.get("/logout",(req,res,next)=>{
@@ -224,7 +228,7 @@ app.get("/logout",(req,res,next)=>{
             return next(err);
         }
         req.flash("success","you are logged out!");
-        res.redirect("/");//.logout() takes callback as a parameter means as soon as the user gets loged out then what task is to be performed is to be told in the form of a funtion 
+        res.redirect("/login&signup");//.logout() takes callback as a parameter means as soon as the user gets loged out then what task is to be performed is to be told in the form of a funtion 
     });
 })
 
@@ -256,6 +260,11 @@ app.post("/skills",isLoggedIn,async(req,res)=>{
     let save=await newUser.save();
     let allSkills=await Skills.find({});
     res.render("./listing2/skills_result.ejs",{allSkills,obj1});
+})
+app.post("/skills_search",isLoggedIn,(req,res)=>{
+    let {category1,category2}=req.body;
+    console.log(category1);
+    res.redirect("/");
 })
 
 //express middleware which deals with errors

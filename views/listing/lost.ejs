@@ -3,6 +3,13 @@
     .main{
         padding: 50px;
     }
+    .change{
+        opacity: 0.9;
+    }
+
+    .change2{
+        padding: 10px 30px 10px 30px;
+    }
 </style>
 <body>
     
@@ -20,7 +27,7 @@
                 <div class="row">
                     <div class="mb-3 col-6">
                         <label for="location" class="form-label">Nearest Found Location</label>
-                        <select name="obj[location]" required class="form-control">
+                        <select name="obj[location]" required class="form-control change">
                             <option disabled selected value> -- select an option -- </option>
                             <option value="Mahatma Gandhi Block">Mahatma Gandhi Block</option>
                             <option value="Pearl Research Park">Pearl Research Park</option>
@@ -64,7 +71,7 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="date" class="form-label">Lost Date</label>
-                        <input name="obj[lostDate]" class="form-control" type="date" required/>
+                        <input name="obj[lostDate]" class="form-control change" type="date" required/>
                         <div class="invalid-feedback">Date is required</div>
                     </div>
                 </div>
@@ -72,7 +79,7 @@
                     
                     <div class="mb-3 col-md-6">
                         <label for="keyword" class="form-label" >Category</label>
-                        <select name="obj[keywords]" id="keyword" required class="form-control" onchange="updateKeyword2Options()">
+                        <select name="obj[keywords]" id="keyword" required class="form-control change" onchange="updateKeyword2Options()">
                             <option disabled selected value> -- select an option -- </option>
                             <option value="academic materials">Academic Materials</option>
                             <option value="clothing">Clothing and Shoes</option>
@@ -91,7 +98,7 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="keyword2" class="form-label" >Sub-Category</label>
-                        <select name="obj[keywords2]" id="keyword2" required class="form-control">
+                        <select name="obj[keywords2]" id="keyword2" required class="form-control change" >
                             
                         </select>
                         <div class="invalid-feedback">Please enter a short description</div>
@@ -101,7 +108,7 @@
                     
                     <div class="mb-3 col-md-6">
                         <label for="color" class="form-label" >Colour</label>
-                        <select name="obj[color]" id="color" required class="form-control">
+                        <select name="obj[color]" id="color" required class="form-control change">
                             <option value="Black">Black</option>
                                 <option value="White">White</option>
                                 <option value="Gray">Gray</option>
@@ -117,17 +124,17 @@
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="brand" class="form-label" >Brand Name</label>
-                        <input type="text" name="obj[brand]" placeholder="Enter the name of the brand" class="form-control">
+                        <input type="text" name="obj[brand]" placeholder="Enter the name of the brand" class="form-control change">
                         <div class="invalid-feedback">Please enter a short description</div>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea name="obj[description]" placeholder="enter description" type="text" class="form-control" required></textarea>
+                    <textarea name="obj[description]" placeholder="enter description" type="text" class="form-control change" required></textarea>
                     <div class="invalid-feedback">Please enter a short description</div>
                 </div>
-                <button class="btn btn-dark add-btn mt-3" type="submit">Add</button>
+                <button class="btn btn-dark add-btn mt-3 change2" type="submit">Add</button>
             </form>
         </div>
     </div>
