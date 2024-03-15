@@ -3,10 +3,19 @@
     .change{
         background-color: transparent;
         color: white;
-        border: solid 3px white;
+
         border-radius: 20px;
         padding: 15px;
     }
+    .glass{
+            background: linear-gradient(135deg,rgba(255,255,255,0.2),rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+        }
+  
 </style>
 <div>
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-5 ms-3 me-3">
@@ -50,7 +59,7 @@
                         <%if(sum>=70 && flag){%>
                             <%flag2=true%>
                             <a href="/result2/<%=item.id%>" class="listing-link">
-                                <div class="card col listing-card mb-5 change">
+                                <div class="card col listing-card mb-5 change glass">
                                     <img src="<%=item.image.url%>" class="card-img-top" style="height: 20rem;" alt="...">
                                     <div class="card-body">
                                     <p class="card-text">
@@ -68,7 +77,9 @@
                 <%}%>
              
             <%if(flag2==false){%>
-                <div><h2>No match found!!!</h2></div>
+                <center>
+                <div class="main glass change4"> <div><h2>No match found!!!</h2></div></div>
+            </center>
                     <%}%>
     </div>
 </div>

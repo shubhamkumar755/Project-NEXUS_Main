@@ -19,10 +19,11 @@
         }
 
         #college {
-            font-family: sans-serif;
+            font-family: Roboto;
             color: transparent;
             padding-top: 0px;
-            font-size: 95px;
+            /* margin-bottom: 5px; */
+            font-size: 90px;
             -webkit-text-stroke: 3px white;
             padding-bottom: 5px;
 
@@ -69,7 +70,7 @@
         }
 
 .line {
-            height: 500px;
+            height: 600px;
             width: 7px;
             position: absolute;
             top: 750px;
@@ -209,6 +210,24 @@
             }
         }
 
+        #down img {
+            margin-top: 110px;
+            width: 40px;
+
+            animation: fade 0.5s ease 1;
+            animation-timeline: scroll();
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.7;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
 </style>
 
 <body>
@@ -227,7 +246,11 @@
                 <button class="btn signup">Signup</button>
             </div> -->
         </div>
+        <div id="down">
+            <img src="./images/arrow.png"></div>
     </center>
+
+    
 
 
     <div class="line"></div>
@@ -262,5 +285,7 @@
 
         </div>
     </a> 
+    <br><br><br><br><br><br><br>
 </div>
+
 </body>

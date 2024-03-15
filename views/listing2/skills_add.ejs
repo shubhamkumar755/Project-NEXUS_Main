@@ -3,15 +3,29 @@
     .main{
         padding: 50px;
     }
+    .glass{
+            background: linear-gradient(135deg,rgba(255,255,255,0.2),rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+        }
+      .change3{
+        margin-right: 150px;
+        margin-left:150px;
+        padding-top:50px ;
+        padding-bottom:50px ;
+      }
 </style>
 <body>
     
-
-<div class="main">
+<br><br><br><br>
+<div class="main glass change3">
     <div class="row mt-3">
         <div class="col-8 offset-2">
             <h2>Enter The Following Details</h2>
-            <form action="/skills" method="post"  class="needs-validation" novalidate >
+            <form action="/skills_add" method="post"  class="needs-validation" novalidate >
                 <!-- <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input name="obj[title]" placeholder="enter title" type="text" class="form-control" required/>
@@ -117,7 +131,7 @@
                 </div>
 
                 <br>
-                <button class="btn btn-dark add-btn mt-3" type="submit">Add</button>
+                <button class="btn btn-success add-btn mt-3" type="submit">Add</button>
             </form>
         </div>
     </div>

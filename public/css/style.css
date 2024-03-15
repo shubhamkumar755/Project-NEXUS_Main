@@ -16,17 +16,18 @@ body{
     height: 100%;
     margin: 0;
     padding: 0;
+    
 }
 
 #e1 {
     position: fixed;
     top: 180px;
-    left: 33%;
-    width: 500px;
-    height: 500px;
+    left: 30%;
+    width: 650px;
+    height: 650px;
     border-radius: 50%;
     /* background-color: aqua; */
-    opacity: 0.7;
+    opacity: 0.6;
     background-image: linear-gradient(blue, limegreen);
     filter: blur(150px);
     /* animation: e1 10s ease 0s infinite, */
@@ -57,13 +58,13 @@ body{
 #e2 {
     position: fixed;
     top: -400px;
-    left: -100px;
-    width: 500px;
-    height: 500px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
     border-radius: 50%;
     /* background-color: blue; */
     background-image: linear-gradient(limegreen, aqua);
-    opacity: 0.4;
+    opacity: 0.3;
     filter: blur(100px);
     animation: e2 3s ease 0s infinite alternate;
     z-index: -1;
@@ -84,11 +85,11 @@ body{
     position: fixed;
     top: 300px;
     right: -400px;
-    width: 500px;
-    height: 500px;
+    width: 650px;
+    height: 650px;
     border-radius: 50%;
     /* background-color: aqua; */
-    opacity: 0.4;
+    opacity: 0.3;
     background-image: linear-gradient(steelblue, aqua);
     filter: blur(100px);
     animation: e3 3s ease 0s infinite alternate;
@@ -167,3 +168,24 @@ body{
     width: 70vh;
     border-radius:10px ;
  }
+
+
+ body::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    /* color of the scroll thumb */
+    border-radius: 5px;
+    /* roundness of the scroll thumb */
+    border: 3px solid rgba(0, 255, 255, 0.5);
+
+    /* creates padding around scroll thumb */
+}

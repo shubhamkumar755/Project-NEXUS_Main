@@ -10,11 +10,25 @@
     .change2{
         padding: 10px 30px 10px 30px;
     }
+    .glass{
+            background: linear-gradient(135deg,rgba(255,255,255,0.2),rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+        }
+      .change3{
+        margin-right: 150px;
+        margin-left:150px;
+        padding-top:50px ;
+        padding-bottom:50px ;
+      }
 </style>
 <body>
-    
+    <br><br><br><br>
 
-<div class="main">
+<div class="main change3 glass">
     <div class="row mt-3">
         <div class="col-8 offset-2">
             <h2>Details of Lost item</h2>
@@ -134,11 +148,11 @@
                     <textarea name="obj[description]" placeholder="enter description" type="text" class="form-control change" required></textarea>
                     <div class="invalid-feedback">Please enter a short description</div>
                 </div>
-                <button class="btn btn-dark add-btn mt-3 change2" type="submit">Add</button>
+                <button class="btn btn-success add-btn mt-3 change2" type="submit">Add</button>
             </form>
         </div>
     </div>
-
+<br><br>
 </div>
 </body>
 <script>

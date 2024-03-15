@@ -1,6 +1,22 @@
 <%layout("layouts/boilerplate")%>
+<style>
+    .glass{
+            background: linear-gradient(135deg,rgba(255,255,255,0.2),rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+        }
+    .change{
+        margin: 250px;
+        padding-top:50px ;
+        padding-bottom:50px ;
+    }
+</style>
 <body>
-<div class="row mt-5">
+    <br><br><br><br>
+<div class="row mt-5 change glass ">
         <h1 class="col-6 offset-3">Login</h1>
     <div class="col-6 offset-3 mt-3">
         <form action="/login" method="post" class="needs-validation" novalidate>
