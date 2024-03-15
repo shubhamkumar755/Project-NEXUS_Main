@@ -1,0 +1,181 @@
+<%layout("layouts/boilerplate")%>
+<style>
+    .main{
+        padding: 50px;
+    }
+</style>
+<body>
+    
+
+<div class="main">
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h2>Enter The Following Details</h2>
+            <form action="/skills" method="post"  class="needs-validation" novalidate >
+                <!-- <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input name="obj[title]" placeholder="enter title" type="text" class="form-control" required/>
+                    <div class="valid-feedback">Title looks good</div>
+                </div> --> 
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="year" class="form-label">Current Year</label>
+                        <select name="obj[year]" required class="form-control">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="1">1st Year</option>
+                            <option value="2">2nd Year</option>
+                            <option value="3">3rd Year</option>
+                            <option value="4">4th Year</option>
+                        </select>
+                            <div class="invalid-feedback">Location should be valid</div>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                    <div class="mb-3 col-md-6">
+                        <label for="keyword" class="form-label" >Skill Category-1</label>
+                        <select name="obj[keywords][0]" id="keyword" required class="form-control" onchange="updateSubSkillsOptions()">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="Technical">Technical</option>
+                            <option value="Music">Music</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Gaming">Gaming</option>
+                            <option value="Art and Crafts">Art and Crafts</option>
+                            <option value="Language">Language</option>
+                        </select>
+                        <div class="invalid-feedback">Please enter a short description</div>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="keyword2" class="form-label" >Sub-Category</label>
+                        <select name="obj[keywords2][0]" id="keyword2" required class="form-control">
+                            <option disabled selected value> -- select an option -- </option>
+                        </select>
+                        <div class="invalid-feedback">Please enter a short description</div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    
+                    <div class="mb-3 col-md-6">
+                        <label for="keyword11" class="form-label" >Skill Category-2</label>
+                        <select name="obj[keywords][1]" id="keyword11" required class="form-control" onchange="updateSubSkillsOptions2()">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="Technical">Technical</option>
+                            <option value="Music">Music</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Gaming">Gaming</option>
+                            <option value="Art and Crafts">Art and Crafts</option>
+                            <option value="Language">Language</option>
+                        </select>
+                        <div class="invalid-feedback">Please enter a short description</div>
+                    </div>
+                    <div class="mb-3 col-md-6">
+                        <label for="keyword22" class="form-label" >Sub-Category</label>
+                        <select name="obj[keywords2][1]" id="keyword22" required class="form-control">
+                            <option disabled selected value> -- select an option -- </option>
+                        </select>
+                        <div class="invalid-feedback">Please enter a short description</div>
+                    </div>
+                </div>
+
+                <br>
+                <button class="btn btn-dark add-btn mt-3" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+
+function updateSubSkillsOptions() {
+  var mainSkill = document.getElementById("keyword");
+  var subSkill = document.getElementById("keyword2");
+  
+  // Clear existing options
+  subSkill.innerHTML = "";
+  
+  // Get selected value from mainSkill
+  var selectedValue = mainSkill.value;
+  
+  // Add options to subSkill based on selectedValue
+  if (selectedValue === "Technical") {
+    subSkill.add(new Option("Programming", "Programming"));
+    subSkill.add(new Option("IT and Networking", "IT and Networking"));
+    subSkill.add(new Option("Graphic Design", "Graphic Design"));
+    subSkill.add(new Option("Hardware", "Hardware"));
+  } else if (selectedValue === "Music") {
+    subSkill.add(new Option("Instrumental Performance", "Instrumental Performance"));
+    subSkill.add(new Option("Vocal Performance", "Vocal Performance"));
+    subSkill.add(new Option("Music Theory", "Music Theory"));
+    subSkill.add(new Option("Audio Engineering", "Audio Engineering"));
+  } else if (selectedValue === "Sports") {
+    subSkill.add(new Option("Team Sports", "Team Sports"));
+    subSkill.add(new Option("Individual Sports", "Individual Sports"));
+    subSkill.add(new Option("Outdoor Activities", "Outdoor Activities"));
+  } else if (selectedValue === "Gaming") {
+    subSkill.add(new Option("Strategy Games", "Strategy Games"));
+    subSkill.add(new Option("First-Person Shooter (FPS)", "First-Person Shooter (FPS)"));
+    subSkill.add(new Option("Role-Playing Games (RPG)", "Role-Playing Games (RPG)"));
+    subSkill.add(new Option("Simulation Games", "Simulation Games"));
+    subSkill.add(new Option("Puzzle Games", "Puzzle Games"));
+  } else if (selectedValue === "Art and Crafts") {
+    subSkill.add(new Option("Drawing and Sketching", "Drawing and Sketching"));
+    subSkill.add(new Option("Painting", "Painting"));
+    subSkill.add(new Option("Sculpting", "Sculpting"));
+    subSkill.add(new Option("Crafts", "Crafts"));
+  } else if (selectedValue === "Language") {
+    subSkill.add(new Option("Speaking", "Speaking"));
+    subSkill.add(new Option("Writing", "Writing"));
+    subSkill.add(new Option("Reading Comprehension", "Reading Comprehension"));
+    subSkill.add(new Option("Translation", "Translation"));
+  }
+}
+ 
+
+function updateSubSkillsOptions2() {
+  var mainSkill = document.getElementById("keyword11");
+  var subSkill = document.getElementById("keyword22");
+  
+  // Clear existing options
+  subSkill.innerHTML = "";
+  
+  // Get selected value from mainSkill
+  var selectedValue = mainSkill.value;
+  
+  // Add options to subSkill based on selectedValue
+  if (selectedValue === "Technical") {
+    subSkill.add(new Option("Programming", "Programming"));
+    subSkill.add(new Option("IT and Networking", "IT and Networking"));
+    subSkill.add(new Option("Graphic Design", "Graphic Design"));
+    subSkill.add(new Option("Hardware", "Hardware"));
+  } else if (selectedValue === "Music") {
+    subSkill.add(new Option("Instrumental Performance", "Instrumental Performance"));
+    subSkill.add(new Option("Vocal Performance", "Vocal Performance"));
+    subSkill.add(new Option("Music Theory", "Music Theory"));
+    subSkill.add(new Option("Audio Engineering", "Audio Engineering"));
+  } else if (selectedValue === "Sports") {
+    subSkill.add(new Option("Team Sports", "Team Sports"));
+    subSkill.add(new Option("Individual Sports", "Individual Sports"));
+    subSkill.add(new Option("Outdoor Activities", "Outdoor Activities"));
+  } else if (selectedValue === "Gaming") {
+    subSkill.add(new Option("Strategy Games", "Strategy Games"));
+    subSkill.add(new Option("First-Person Shooter (FPS)", "First-Person Shooter (FPS)"));
+    subSkill.add(new Option("Role-Playing Games (RPG)", "Role-Playing Games (RPG)"));
+    subSkill.add(new Option("Simulation Games", "Simulation Games"));
+    subSkill.add(new Option("Puzzle Games", "Puzzle Games"));
+  } else if (selectedValue === "Art and Crafts") {
+    subSkill.add(new Option("Drawing and Sketching", "Drawing and Sketching"));
+    subSkill.add(new Option("Painting", "Painting"));
+    subSkill.add(new Option("Sculpting", "Sculpting"));
+    subSkill.add(new Option("Crafts", "Crafts"));
+  } else if (selectedValue === "Language") {
+    subSkill.add(new Option("Speaking", "Speaking"));
+    subSkill.add(new Option("Writing", "Writing"));
+    subSkill.add(new Option("Reading Comprehension", "Reading Comprehension"));
+    subSkill.add(new Option("Translation", "Translation"));
+  }
+}
+</script>
+
+

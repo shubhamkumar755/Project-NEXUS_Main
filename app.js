@@ -8,6 +8,7 @@ const ejsMate=require("ejs-mate");
 const mongoose=require("mongoose");
 const Items=require("./models/foundItems.js");
 const lostUser=require("./models/lostItems.js");
+const Skills=require("./models/skills.js");
 const { itemSchema } = require("./schema.js");
 const mongoURL="mongodb://127.0.0.1:27017/l&f";
 const Atlas_URL=process.env.Mongo_Atlas;
@@ -236,6 +237,25 @@ app.get("/account",isLoggedIn,async(req,res)=>{
     
     res.render("./listing/account",{obj1,losts});
 
+})
+
+
+//Skills
+app.get("/skills",isLoggedIn,(req,res)=>{
+    res.render("./listing2/skills_show.ejs");
+})
+app.post("/skills",isLoggedIn,async(req,res)=>{
+    if(!req.body.obj){
+        console.log(req.body.obj);
+    }
+    let user=req.session.passport.user;
+    let obj1=await User.find({username:user});
+    req.body.obj.userId=obj1[0]._id.toString();
+    let newUser=new Skills(req.body.obj);
+    newUser.username=obj1[0].username;
+    let save=await newUser.save();
+    let allSkills=await Skills.find({});
+    res.render("./listing2/skills_result.ejs",{allSkills,obj1});
 })
 
 //express middleware which deals with errors
