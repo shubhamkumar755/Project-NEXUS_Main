@@ -122,7 +122,7 @@ app.post("/found", isLoggedIn,upload.single('obj[image]'),async(req,res,next)=>{
         query: req.body.obj.location,
         limit: 1
       }).send();
-    console.log(req.body.obj.lostDate);
+    // console.log(req.body.obj.lostDate);
     let url=req.file.path;
     let filename=req.file.filename; 
     let user2=req.session.passport.user;
