@@ -106,7 +106,7 @@ app.get("/",(req,res)=>{
     }
     
 })
-app.get("/lost&found",(req,res)=>{
+app.get("/lost&found",isLoggedIn,(req,res)=>{
     res.render("./listing/show.ejs")
 })
 //FOUND
