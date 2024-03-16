@@ -95,8 +95,16 @@ app.get("/login&signup",(req,res)=>{
     res.render("index1.ejs");
 }) 
 
-app.get("/",isLoggedIn,(req,res)=>{
-    res.render("index2.ejs");
+app.get("/",(req,res)=>{
+
+    if(req.session.passport===undefined)
+    {
+        res.render("index1.ejs");
+    }
+    else{
+        res.render("index2.ejs");
+    }
+    
 })
 app.get("/lost&found",(req,res)=>{
     res.render("./listing/show.ejs")
